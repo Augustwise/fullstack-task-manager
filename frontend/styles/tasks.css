@@ -1,0 +1,501 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f2f2f2;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    width: 100%;
+    max-width: 800px;
+    border: 2px dashed rgb(144, 144, 144);
+}
+
+h1 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+input[type="date"] {
+    width: 220px;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #1a73e8;
+}
+
+input.error,
+textarea.error {
+    border-color: #dc3545;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+button {
+    padding: 0.75rem;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#addButton {
+    width: 180px;
+    background: #1a73e8;
+}
+
+#addButton:hover {
+    background: #1557b0;
+}
+
+.sort-options {
+    margin-top: 1.5rem;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 50%;
+    max-width: 600px;
+}
+
+.sort-options p {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.sort-options label {
+    display: block;
+    padding: 0.3rem 0;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.sort-options input[type="radio"] {
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+#taskList {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.task-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.task-item {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+}
+
+.task-item h3 {
+    color: #1a73e8;
+    margin-bottom: 0.5rem;
+    font-weight: 750;
+    display: inline-block;
+}
+
+.completed-task {
+    background-color: #f3f9f0;
+    border-color: #c8e6c9;
+}
+
+.task-completion-checkbox {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.task-item p {
+    color: #555;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.task-item p:last-child {
+    margin-bottom: 0;
+}
+
+.task-item .date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.file-upload-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.file-upload-btn {
+    padding: 8px 15px;
+    background-color: #5c6bc0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.file-upload-btn:hover {
+    background-color: #3f51b5;
+}
+
+.file-input {
+    display: none;
+}
+
+#fileNameDisplay,
+#editFileNameDisplay {
+    color: #333;
+    font-size: 0.9rem;
+    word-break: break-all;
+}
+
+.current-file {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.file-link {
+    display: inline-flex;
+    align-items: center;
+    color: #1a73e8;
+    text-decoration: none;
+    margin-right: 10px;
+    border-bottom: 1px dotted #1a73e8;
+}
+
+.file-link:hover {
+    color: #1557b0;
+}
+
+.task-file {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dotted #ddd;
+}
+
+.markdown-hint {
+    color: #6c757d;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    font-style: italic;
+}
+
+.task-description {
+    color: #555;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.task-description ul,
+.task-description ol {
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.task-description p {
+    margin-bottom: 0.5rem;
+}
+
+.task-description strong {
+    font-weight: 700;
+}
+
+.task-description em {
+    font-style: italic;
+}
+
+.task-description code {
+    background-color: #f3f3f3;
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+.task-description pre {
+    background-color: #f8f9fa;
+    padding: 0.75rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-bottom: 0.5rem;
+}
+
+.task-description blockquote {
+    border-left: 3px solid #ddd;
+    padding-left: 0.75rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.delete-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.delete-icon:hover {
+    color: #e74c3c;
+    transform: scale(1.1);
+}
+
+.edit-icon {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.edit-icon:hover {
+    color: #3498db;
+    transform: scale(1.1);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 4% auto;
+    padding: 2rem;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.modal-content h2 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 1.5rem;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #777;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+#saveTaskButton {
+    background: #1a73e8;
+}
+
+#saveTaskButton:hover {
+    background: #1557b0;
+}
+
+#cancelEditButton {
+    background: #6e6e6e;
+}
+
+#cancelEditButton:hover {
+    background: #4a4a4a;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: #bbb;
+}
+
+#currentDate {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #333;
+    font-size: 1rem;
+}
+
+.user-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: auto;
+    min-width: 150px;
+}
+
+.user-info p {
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.user-info #userEmail {
+    font-weight: 500;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.user-info #logoutBtn {
+    background-color: #8a8a8a;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    width: 80%;
+    max-width: 120px;
+}
+
+.user-info #logoutBtn:hover {
+    background-color: #6e6e6e;
+}
+
+.success-message {
+    color: #28a745;
+    text-align: center;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.success-message.visible {
+    opacity: 1;
+}
+
+.priority-select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: #f8f9fa;
+    color: #333;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.priority-badge {
+    display: inline-block;
+    margin-left: 1rem;
+    padding: 0.2em 0.7em;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.priority-high {
+    background: #ffeaea;
+    color: #e53935;
+    border: 1px solid #e53935;
+}
+
+.priority-medium {
+    background: #fff8e1;
+    color: #ff9800;
+    border: 1px solid #ff9800;
+}
+
+.priority-low {
+    background: #e8f5e9;
+    color: #43a047;
+    border: 1px solid #43a047;
+}

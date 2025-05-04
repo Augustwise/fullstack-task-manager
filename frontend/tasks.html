@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/tasks.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
+    <script src="../scripts/tasks.js" defer></script>
+</head>
+
+<body>
+    <div class="user-info">
+        <span id="userEmail">example@gmail.com</span>
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+    <div id="currentDate" style="position:absolute; top:20px; left:20px; color:#333; font-size:1rem;"></div>
+
+    <div class="container">
+        <h1>Task Manager</h1>
+        <form action="#" method="get" id="taskForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="taskTitle">Title</label>
+                <input type="text" id="taskTitle" name="taskTitle" placeholder="Enter a short task title"
+                    required>
+                <div class="error-message" id="titleError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="taskDescription">Description</label>
+                <textarea id="taskDescription" name="taskDescription"
+                    placeholder="Enter a detailed description of the task"></textarea>
+                <div class="markdown-hint">Markdown supported: **bold**, *italic*, - list ...</div>
+                <div class="error-message" id="descriptionError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="taskFile">File</label>
+                <div class="file-upload-container">
+                    <button type="button" id="fileUploadBtn" class="file-upload-btn">Upload File</button>
+                    <input type="file" id="taskFile" name="taskFile" class="file-input" accept=".pdf,.docx,image/*">
+                    <span id="fileNameDisplay"></span>
+                    <div class="error-message" id="fileError"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="taskDate">Due Date</label>
+                <input type="date" id="taskDate" name="taskDate" max="2028-12-31" placeholder="Select date">
+                <div class="error-message" id="dateError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="taskPriority">Priority</label>
+                <select id="taskPriority" name="taskPriority" class="priority-select">
+                    <option value="high">High</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="low">Low</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button type="button" id="addButton">Add Task</button>
+            </div>
+        </form>
+
+        <div class="sort-options">
+            <p>Sort by:</p>
+            <label>
+                <input type="radio" name="sortOption" value="createdAt" checked>
+                Date Added (newest first)
+            </label>
+            <label>
+                <input type="radio" name="sortOption" value="dueDate">
+                Due Date
+            </label>
+            <label>
+                <input type="radio" name="sortOption" value="priority">
+                Priority
+            </label>
+        </div>
+
+        <div id="taskList"></div>
+        <h3 id="taskListPlaceholder">Your added tasks will appear here</h3>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Edit Task</h2>
+            <form id="editTaskForm" enctype="multipart/form-data">
+                <input type="hidden" id="editTaskId">
+                <div class="form-group">
+                    <label for="editTaskTitle">Title</label>
+                    <input type="text" id="editTaskTitle" name="editTaskTitle" required>
+                    <div class="error-message" id="editTitleError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="editTaskDescription">Description</label>
+                    <textarea id="editTaskDescription" name="editTaskDescription"></textarea>
+                    <div class="markdown-hint">Supports Markdown: **bold**, *italic*, - list items...</div>
+                    <div class="error-message" id="editDescriptionError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="editTaskFile">File</label>
+                    <div class="file-upload-container">
+                        <button type="button" id="editFileUploadBtn" class="file-upload-btn">Upload File</button>
+                        <input type="file" id="editTaskFile" name="editTaskFile" class="file-input"
+                            accept=".pdf,.docx,image/*">
+                        <span id="editFileNameDisplay"></span>
+                        <div class="error-message" id="editFileError"></div>
+                    </div>
+                    <div id="currentFileDisplay" class="current-file"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="editTaskDate">Due Date</label>
+                    <input type="date" id="editTaskDate" name="editTaskDate" max="2028-12-31">
+                    <div class="error-message" id="editDateError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="editTaskPriority">Priority</label>
+                    <select id="editTaskPriority" name="editTaskPriority" class="priority-select">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="saveTaskButton">Save</button>
+                    <button type="button" id="cancelEditButton">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
