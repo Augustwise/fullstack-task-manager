@@ -16,8 +16,9 @@ This is a full-stack web application designed for personal task management. It a
 *   **File Handling:** Multer
 
 ## Screenshots
-<img src="URL_or_relative_path" alt="Alt text" width="250"/>
-<img src="URL_or_relative_path" alt="Alt text" width="250"/>
+<img src="https://github.com/Augustwise/fullstack-task-manager/blob/main/screenshots/1.png" alt="Tasks list" width="700"/>
+<img src="https://github.com/Augustwise/fullstack-task-manager/blob/main/screenshots/2.png" alt="Add task form" width="700"/>
+<img src="https://github.com/Augustwise/fullstack-task-manager/blob/main/screenshots/3.png" alt="Sorting" width="400"/>
 
 
 
