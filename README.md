@@ -16,6 +16,9 @@ This is a full-stack web application designed for personal task management. It a
 *   **File Handling:** Multer
 
 ## Screenshots
+<img src="URL_or_relative_path" alt="Alt text" width="250"/>
+<img src="URL_or_relative_path" alt="Alt text" width="250"/>
+
 
 
 
