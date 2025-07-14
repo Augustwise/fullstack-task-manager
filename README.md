@@ -10,9 +10,9 @@ This is a full-stack web application designed for personal task management. It a
 **Technology Stack:**
 
 *   **Backend:** Node.js, Express.js
-*   **Database:** MongoDB with Mongoose ODM
+*   **Database:** MongoDB
 *   **Frontend:** HTML, CSS, Vanilla JavaScript
-*   **Authentication:** JWT (JSON Web Tokens) via httpOnly Cookies
+*   **Authentication:** JWT (JSON Web Tokens)
 *   **File Handling:** Multer
 
 ## Screenshots
