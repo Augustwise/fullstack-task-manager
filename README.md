@@ -1,5 +1,7 @@
 # fullstack-task-manager
-Simple fullstack task manager. Made as a coursework at university
+🎓 Simple fullstack task manager. 
+
+Made as a coursework at [National Technical University of Ukraine “Igor Sikorsky Kyiv Polytechnic Institute”](https://kpi.ua/en/)
 
 #  Summary
 
