@@ -10,17 +10,65 @@
     <link rel="stylesheet" href="/frontend/styles/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Task Manager</h1>
-        <p>
-            This is a simple application to help you manage your tasks effectively.
-            Track your to-dos, set deadlines, and organize your work.
-            Please login or sign up to continue.
-        </p>
-        <div class="button-group">
-            <button onclick="window.location.href='/frontend/login.html'">Login</button>
-            <button onclick="window.location.href='/frontend/signup.html'">Sign Up</button>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Task Manager</h1>
+            <p class="tagline">Your Personal Productivity Partner</p>
+            <div class="button-group">
+                <button onclick="window.location.href='/frontend/login.html'">Login</button>
+                <button onclick="window.location.href='/frontend/signup.html'">Sign Up</button>
+            </div>
         </div>
-    </div>
+    </header>
+
+    <main class="container">
+        <section class="about-section">
+            <h2>About This Project</h2>
+            <p>
+                This Task Manager is a powerful tool designed to help you organize your life, track your
+                responsibilities, and boost your productivity. Whether you're managing personal errands, academic
+                deadlines, or professional projects, our application provides the features you need to stay on top of
+                everything.
+            </p>
+            <p>
+                Our goal is to offer a clean, intuitive, and efficient user experience, allowing you to focus on what
+                truly matters: getting things done.
+            </p>
+        </section>
+
+        <section class="features-section">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>Task Creation</h3>
+                    <p>Easily create tasks with titles, detailed descriptions, and due dates.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Priority Levels</h3>
+                    <p>Assign priorities (<span class="priority-high">High</span>, <span class="priority-medium">Medium</span>, <span class="priority-low">Low</span>) to focus on what's most important.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>File attachments</h3>
+                    <p>Attach files to your tasks to keep all relevant information in one place.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Secure Authentication</h3>
+                    <p>Your data is protected with a secure login and registration system.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Sorting and Filtering</h3>
+                    <p>Quickly find tasks by sorting them by due date, priority, or creation date.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="call-to-action">
+            <h2>Ready to Get Started?</h2>
+            <p>Sign up for a free account today and take the first step towards a more organized life.</p>
+            <div class="button-group">
+                <button onclick="window.location.href='/frontend/signup.html'">Sign Up Now</button>
+            </div>
+        </section>
+    </main>
 </body>
 </html> 
