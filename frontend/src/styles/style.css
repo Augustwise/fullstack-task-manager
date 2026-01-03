@@ -11,22 +11,27 @@
     --transition-speed: 0.3s;
 }
 
-body {
+.home-page {
     font-family: "Exo 2", sans-serif;
     margin: 0;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
+    min-height: 100vh;
 }
 
-.container {
+.home-page * {
+    box-sizing: border-box;
+}
+
+.home-page .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem 0;
 }
 
-.header {
+.home-page .header {
     background: white;
     padding: 3rem 1rem;
     text-align: center;
@@ -34,36 +39,36 @@ body {
     box-shadow: var(--shadow);
 }
 
-.logo {
+.home-page .logo {
     font-size: 2.5rem;
     font-weight: 700;
     margin: 0;
     color: var(--text-color);
 }
 
-.tagline {
+.home-page .tagline {
     font-size: 1.2rem;
     color: var(--light-text);
     margin: 0.5rem 0 1.5rem;
 }
 
-section {
+.home-page section {
     padding: 3rem 1rem;
     text-align: center;
     border-bottom: 1px solid #eee;
 }
 
-section:last-of-type {
+.home-page section:last-of-type {
     border-bottom: none;
 }
 
-h2 {
+.home-page h2 {
     font-size: 2rem;
     color: var(--text-color);
     margin-bottom: 1rem;
 }
 
-.features-grid {
+.home-page .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -71,7 +76,7 @@ h2 {
     margin-top: 3rem;
 }
 
-.feature-item {
+.home-page .feature-item {
     background: white;
     padding: 2rem;
     border-radius: 8px;
@@ -79,25 +84,25 @@ h2 {
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
 
-.feature-item:hover {
+.home-page .feature-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-.feature-item h3 {
+.home-page .feature-item h3 {
     margin-top: 0;
     font-size: 1.3rem;
     color: var(--primary-color);
 }
 
-.button-group {
+.home-page .button-group {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
 }
 
-button {
+.home-page button {
     padding: 14px 28px;
     font-size: 1rem;
     font-weight: 600;
@@ -110,29 +115,29 @@ button {
     letter-spacing: 0.5px;
 }
 
-button:hover {
+.home-page button:hover {
     transform: translateY(-2px);
 }
 
-button:first-of-type {
+.home-page button:first-of-type {
     background-color: var(--primary-color);
     color: white;
 }
 
-button:first-of-type:hover {
+.home-page button:first-of-type:hover {
     background-color: var(--primary-hover);
 }
 
-.call-to-action button {
+.home-page .call-to-action button {
     background-color: var(--secondary-color);
     color: white;
 }
 
-.call-to-action button:hover {
+.home-page .call-to-action button:hover {
     background-color: var(--secondary-hover);
 }
 
-.footer {
+.home-page .footer {
     background-color: #333;
     color: white;
     text-align: center;
@@ -141,32 +146,32 @@ button:first-of-type:hover {
 }
 
 @media (max-width: 768px) {
-    .logo {
+    .home-page .logo {
         font-size: 2rem;
     }
 
-    h2 {
+    .home-page h2 {
         font-size: 1.8rem;
     }
 
-    .features-grid {
+    .home-page .features-grid {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
-    .button-group {
+    .home-page .button-group {
         flex-direction: column;
     }
 
-    button {
+    .home-page button {
         width: 100%;
     }
 }
 
-.priority-high,
-.priority-medium,
-.priority-low {
+.home-page .priority-high,
+.home-page .priority-medium,
+.home-page .priority-low {
     padding: 0.2em 0.6em;
     border-radius: 12px;
     font-size: 0.9rem;
@@ -174,19 +179,19 @@ button:first-of-type:hover {
     border: 1px solid;
 }
 
-.priority-high {
+.home-page .priority-high {
     background: #ffeaea;
     color: #e53935;
     border-color: #e53935;
 }
 
-.priority-medium {
+.home-page .priority-medium {
     background: #fff8e1;
     color: #ff9800;
     border-color: #ff9800;
 }
 
-.priority-low {
+.home-page .priority-low {
     background: #e8f5e9;
     color: #43a047;
     border-color: #43a047;

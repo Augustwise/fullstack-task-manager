@@ -1,0 +1,13 @@
+.loading-state {
+  font-family: "Exo 2", sans-serif;
+  padding: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+.error-state {
+  font-family: "Exo 2", sans-serif;
+  padding: 1.5rem;
+  text-align: center;
+  color: #dc3545;
+}
