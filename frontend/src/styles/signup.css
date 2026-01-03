@@ -1,0 +1,114 @@
+:root {
+  --transition-speed: 0.3s;
+}
+
+.page-signup * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Exo 2", sans-serif;
+}
+
+.page-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #eeeeee;
+}
+
+.page-signup .container {
+  background: white;
+  padding: 2rem;
+  width: 100%;
+  max-width: 450px;
+  border: 2px dashed rgb(144, 144, 144);
+}
+
+.page-signup h1 {
+  text-align: center;
+  color: #1a73e8;
+  margin-bottom: 1.5rem;
+}
+
+.page-signup .form-group {
+  margin-bottom: 1rem;
+}
+
+.page-signup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.page-signup input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: border-color var(--transition-speed);
+}
+
+.page-signup input:focus {
+  outline: none;
+  border-color: #1a73e8;
+}
+
+.page-signup input.error {
+  border-color: #dc3545;
+}
+
+.page-signup .error-message {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.page-signup button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color var(--transition-speed);
+}
+
+.page-signup button:hover {
+  background: #1557b0;
+}
+
+.page-signup .login-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.page-signup .login-link a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.page-signup .login-link a:hover {
+  text-decoration: underline;
+}
+
+.page-signup .password-requirements {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.page-signup .requirement {
+  margin: 0.2rem 0;
+}
+
+.page-signup .requirement.met {
+  color: #28a745;
+}
+
+.page-signup .requirement.unmet {
+  color: #dc3545;
+}

@@ -1,4 +1,4 @@
-* {
+.page-tasks * {
   margin: 0;
   box-sizing: border-box;
   font-family: "Exo 2", sans-serif;
@@ -8,7 +8,7 @@
   --transition-speed: 0.3s;
 }
 
-body {
+.page-tasks {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@ body {
   background: #f2f2f2;
 }
 
-.container {
+.page-tasks .container {
   background: white;
   padding: 2rem;
   width: 100%;
@@ -24,17 +24,17 @@ body {
   border: 2px dashed rgb(144, 144, 144);
 }
 
-h1 {
+.page-tasks h1 {
   text-align: center;
   color: #1a73e8;
   margin-bottom: 1.5rem;
 }
 
-.form-group {
+.page-tasks .form-group {
   margin-bottom: 1rem;
 }
 
-label {
+.page-tasks label {
   display: block;
   margin-bottom: 0.5rem;
   color: #333;
@@ -42,7 +42,7 @@ label {
 
 input[type="text"],
 input[type="date"],
-textarea {
+.page-tasks textarea {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ddd;
@@ -50,42 +50,42 @@ textarea {
   transition: border-color var(--transition-speed);
 }
 
-input[type="date"] {
+.page-tasks input[type="date"] {
   width: 220px;
 }
 
-textarea {
+.page-tasks textarea {
   min-height: 100px;
   resize: vertical;
 }
 
 input[type="text"]:focus,
 input[type="date"]:focus,
-textarea:focus {
+.page-tasks textarea:focus {
   outline: none;
   border-color: #1a73e8;
 }
 
 input.error,
-textarea.error {
+.page-tasks textarea.error {
   border-color: #dc3545;
 }
 
-.error-message {
+.page-tasks .error-message {
   color: #dc3545;
   font-size: 0.8rem;
   margin-top: 0.25rem;
   display: none;
 }
 
-.button-group {
+.page-tasks .button-group {
   display: flex;
   gap: 1rem;
   margin-top: 1.5rem;
   justify-content: center;
 }
 
-button {
+.page-tasks button {
   padding: 0.75rem;
   color: white;
   border: none;
@@ -94,16 +94,16 @@ button {
   transition: background-color var(--transition-speed);
 }
 
-#addButton {
+.page-tasks #addButton {
   width: 180px;
   background: #1a73e8;
 }
 
-#addButton:hover {
+.page-tasks #addButton:hover {
   background: #1557b0;
 }
 
-.sort-options {
+.page-tasks .sort-options {
   margin-top: 1.5rem;
   background-color: #f8f9fa;
   padding: 1rem;
@@ -113,37 +113,37 @@ button {
   max-width: 600px;
 }
 
-.sort-options p {
+.page-tasks .sort-options p {
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: #333;
 }
 
-.sort-options label {
+.page-tasks .sort-options label {
   display: block;
   padding: 0.3rem 0;
   cursor: pointer;
   margin-left: 0.5rem;
 }
 
-.sort-options input[type="radio"] {
+.page-tasks .sort-options input[type="radio"] {
   margin-right: 0.5rem;
   cursor: pointer;
 }
 
-#taskList {
+.page-tasks #taskList {
   margin-top: 1.5rem;
   padding-top: 1rem;
   border-top: 1px solid #ddd;
 }
 
-.task-header {
+.page-tasks .task-header {
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
 }
 
-.task-item {
+.page-tasks .task-item {
   background: #f8f9fa;
   border: 1px solid #ddd;
   padding: 1rem;
@@ -157,19 +157,19 @@ button {
     border-color var(--transition-speed);
 }
 
-.task-item h3 {
+.page-tasks .task-item h3 {
   color: #1a73e8;
   margin-bottom: 0.5rem;
   font-weight: 750;
   display: inline-block;
 }
 
-.completed-task {
+.page-tasks .completed-task {
   background-color: #f3f9f0;
   border-color: #c8e6c9;
 }
 
-.task-completion-checkbox {
+.page-tasks .task-completion-checkbox {
   margin-right: 10px;
   width: 20px;
   height: 20px;
@@ -177,29 +177,29 @@ button {
   vertical-align: middle;
 }
 
-.task-item p {
+.page-tasks .task-item p {
   color: #555;
   margin-bottom: 0.5rem;
   line-height: 1.4;
 }
 
-.task-item p:last-child {
+.page-tasks .task-item p:last-child {
   margin-bottom: 0;
 }
 
-.task-item .date {
+.page-tasks .task-item .date {
   color: #666;
   font-size: 0.9rem;
   margin-bottom: 0.75rem;
 }
 
-.file-upload-container {
+.page-tasks .file-upload-container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.file-upload-btn {
+.page-tasks .file-upload-btn {
   padding: 8px 15px;
   background-color: #5c6bc0;
   color: white;
@@ -210,27 +210,27 @@ button {
   transition: background-color var(--transition-speed);
 }
 
-.file-upload-btn:hover {
+.page-tasks .file-upload-btn:hover {
   background-color: #3f51b5;
 }
 
-.file-input {
+.page-tasks .file-input {
   display: none;
 }
 
 #fileNameDisplay,
-#editFileNameDisplay {
+.page-tasks #editFileNameDisplay {
   color: #333;
   font-size: 0.9rem;
   word-break: break-all;
 }
 
-.current-file {
+.page-tasks .current-file {
   margin-top: 5px;
   font-size: 0.9rem;
 }
 
-.file-link {
+.page-tasks .file-link {
   display: inline-flex;
   align-items: center;
   color: #1a73e8;
@@ -239,24 +239,24 @@ button {
   border-bottom: 1px dotted #1a73e8;
 }
 
-.file-link:hover {
+.page-tasks .file-link:hover {
   color: #1557b0;
 }
 
-.task-file {
+.page-tasks .task-file {
   margin-top: 10px;
   padding-top: 10px;
   border-top: 1px dotted #ddd;
 }
 
-.markdown-hint {
+.page-tasks .markdown-hint {
   color: #6c757d;
   font-size: 0.8rem;
   margin-top: 0.25rem;
   font-style: italic;
 }
 
-.task-description {
+.page-tasks .task-description {
   color: #555;
   margin-bottom: 0.5rem;
   line-height: 1.4;
@@ -265,31 +265,31 @@ button {
 }
 
 .task-description ul,
-.task-description ol {
+.page-tasks .task-description ol {
   margin-left: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
-.task-description p {
+.page-tasks .task-description p {
   margin-bottom: 0.5rem;
 }
 
-.task-description strong {
+.page-tasks .task-description strong {
   font-weight: 700;
 }
 
-.task-description em {
+.page-tasks .task-description em {
   font-style: italic;
 }
 
-.task-description code {
+.page-tasks .task-description code {
   background-color: #f3f3f3;
   padding: 0.1rem 0.3rem;
   border-radius: 3px;
   font-family: monospace;
 }
 
-.task-description pre {
+.page-tasks .task-description pre {
   background-color: #f8f9fa;
   padding: 0.75rem;
   border-radius: 4px;
@@ -297,14 +297,14 @@ button {
   margin-bottom: 0.5rem;
 }
 
-.task-description blockquote {
+.page-tasks .task-description blockquote {
   border-left: 3px solid #ddd;
   padding-left: 0.75rem;
   color: #6c757d;
   margin-bottom: 0.5rem;
 }
 
-.delete-icon {
+.page-tasks .delete-icon {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -314,12 +314,12 @@ button {
   transition: color var(--transition-speed), transform var(--transition-speed);
 }
 
-.delete-icon:hover {
+.page-tasks .delete-icon:hover {
   color: #e74c3c;
   transform: scale(1.1);
 }
 
-.edit-icon {
+.page-tasks .edit-icon {
   position: absolute;
   top: 10px;
   right: 40px;
@@ -329,12 +329,12 @@ button {
   transition: color var(--transition-speed), transform var(--transition-speed);
 }
 
-.edit-icon:hover {
+.page-tasks .edit-icon:hover {
   color: #3498db;
   transform: scale(1.1);
 }
 
-.modal {
+.page-tasks .modal {
   display: none;
   position: fixed;
   z-index: 1000;
@@ -346,7 +346,7 @@ button {
   overflow: auto;
 }
 
-.modal-content {
+.page-tasks .modal-content {
   background-color: white;
   margin: 4% auto;
   padding: 2rem;
@@ -357,13 +357,13 @@ button {
   position: relative;
 }
 
-.modal-content h2 {
+.page-tasks .modal-content h2 {
   text-align: center;
   color: #1a73e8;
   margin-bottom: 1.5rem;
 }
 
-.close-modal {
+.page-tasks .close-modal {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -373,38 +373,38 @@ button {
   cursor: pointer;
 }
 
-.close-modal:hover {
+.page-tasks .close-modal:hover {
   color: #333;
 }
 
-#saveTaskButton {
+.page-tasks #saveTaskButton {
   background: #1a73e8;
 }
 
-#saveTaskButton:hover {
+.page-tasks #saveTaskButton:hover {
   background: #1557b0;
 }
 
-#cancelEditButton {
+.page-tasks #cancelEditButton {
   background: #6e6e6e;
 }
 
-#cancelEditButton:hover {
+.page-tasks #cancelEditButton:hover {
   background: #4a4a4a;
 }
 
 input::placeholder,
-textarea::placeholder {
+.page-tasks textarea::placeholder {
   color: #999;
   font-size: 0.9rem;
 }
 
 input:focus::placeholder,
-textarea:focus::placeholder {
+.page-tasks textarea:focus::placeholder {
   color: #bbb;
 }
 
-#currentDate {
+.page-tasks #currentDate {
   font-family: "Exo 2", sans-serif;
   font-weight: bold;
   position: absolute;
@@ -414,7 +414,7 @@ textarea:focus::placeholder {
   font-size: 1rem;
 }
 
-.user-info {
+.page-tasks .user-info {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -427,13 +427,13 @@ textarea:focus::placeholder {
   min-width: 150px;
 }
 
-.user-info p {
+.page-tasks .user-info p {
   margin-bottom: 5px;
   color: #333;
   font-size: 0.9rem;
 }
 
-.user-info #userEmail {
+.page-tasks .user-info #userEmail {
   font-weight: 500;
   color: #333;
   display: block;
@@ -441,7 +441,7 @@ textarea:focus::placeholder {
   font-size: 1rem;
 }
 
-.user-info #logoutBtn {
+.page-tasks .user-info #logoutBtn {
   background-color: #8a8a8a;
   color: white;
   border: none;
@@ -454,11 +454,11 @@ textarea:focus::placeholder {
   max-width: 120px;
 }
 
-.user-info #logoutBtn:hover {
+.page-tasks .user-info #logoutBtn:hover {
   background-color: #6e6e6e;
 }
 
-.success-message {
+.page-tasks .success-message {
   color: #28a745;
   text-align: center;
   margin-top: 10px;
@@ -466,11 +466,11 @@ textarea:focus::placeholder {
   transition: opacity 0.5s ease-in-out;
 }
 
-.success-message.visible {
+.page-tasks .success-message.visible {
   opacity: 1;
 }
 
-.priority-select {
+.page-tasks .priority-select {
   padding: 0.5rem;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -481,7 +481,7 @@ textarea:focus::placeholder {
   margin-bottom: 0.5rem;
 }
 
-.priority-badge {
+.page-tasks .priority-badge {
   display: inline-block;
   margin-left: 1rem;
   padding: 0.2em 0.7em;
@@ -491,19 +491,19 @@ textarea:focus::placeholder {
   vertical-align: middle;
 }
 
-.priority-high {
+.page-tasks .priority-high {
   background: #ffeaea;
   color: #e53935;
   border: 1px solid #e53935;
 }
 
-.priority-medium {
+.page-tasks .priority-medium {
   background: #fff8e1;
   color: #ff9800;
   border: 1px solid #ff9800;
 }
 
-.priority-low {
+.page-tasks .priority-low {
   background: #e8f5e9;
   color: #43a047;
   border: 1px solid #43a047;

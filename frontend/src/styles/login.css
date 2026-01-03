@@ -1,0 +1,96 @@
+:root {
+  --transition-speed: 0.3s;
+}
+
+.page-login * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Exo 2", sans-serif;
+}
+
+.page-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #eeeeee;
+}
+
+.page-login .container {
+  background: white;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  border: 2px dashed rgb(144, 144, 144);
+}
+
+.page-login h1 {
+  text-align: center;
+  color: #1a73e8;
+  margin-bottom: 1.5rem;
+}
+
+.page-login .form-group {
+  margin-bottom: 1rem;
+}
+
+.page-login label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.page-login input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: border-color var(--transition-speed);
+}
+
+.page-login input:focus {
+  outline: none;
+  border-color: #1a73e8;
+}
+
+.page-login input.error {
+  border-color: #dc3545;
+}
+
+.page-login .error-message {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.page-login button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color var(--transition-speed);
+}
+
+.page-login button:hover {
+  background: #1557b0;
+}
+
+.page-login .signup-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.page-login .signup-link a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.page-login .signup-link a:hover {
+  text-decoration: underline;
+}

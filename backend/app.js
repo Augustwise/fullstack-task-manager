@@ -15,8 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use('/frontend', express.static(path.join(__dirname, '../frontend')));
-app.use('/scripts', express.static(path.join(__dirname, '../scripts')));
+const frontendDist = path.join(__dirname, '../frontend/dist');
+const frontendIndex = path.join(frontendDist, 'index.html');
 
 app.use((req, res, next) => {
   const requestedPath = req.path.toLowerCase();
@@ -24,19 +24,24 @@ app.use((req, res, next) => {
     '/package.json',
     '/package-lock.json',
     '/backend/',
-    '/.env',
-    '/scripts/tasks.js'
+    '/.env'
   ];
-  const custom403PagePath = path.join(__dirname, '../frontend/403.html');
+  const custom403PagePath = frontendIndex;
 
   if (forbiddenPatterns.some(pattern => requestedPath.startsWith(pattern))) {
     console.log(`Blocked access attempt to sensitive path: ${req.path}`);
-    return res.status(403).sendFile(custom403PagePath);
+    if (fs.existsSync(custom403PagePath)) {
+      return res.status(403).sendFile(custom403PagePath);
+    }
+    return res.status(403).send('Forbidden');
   }
 
   if (requestedPath === '/backend/app.js') {
     console.log(`Blocked access attempt to backend/app.js`);
-    return res.status(403).sendFile(custom403PagePath);
+    if (fs.existsSync(custom403PagePath)) {
+      return res.status(403).sendFile(custom403PagePath);
+    }
+    return res.status(403).send('Forbidden');
   }
 
   next();
@@ -117,7 +122,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_key';
 
 const authenticateToken = (req, res, next) => {
   const token = req.cookies.jwt;
-  const indexPath = '/frontend/index.html';
+  const indexPath = '/';
 
   if (!token) {
     console.log('No token found, redirecting to index.');
@@ -467,17 +472,17 @@ app.patch('/api/tasks/:taskId/toggle-completed', authenticateToken, async (req, 
   }
 });
 
-app.get(['/', '/frontend', '/frontend/'], (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/index.html'));
+app.use(express.static(frontendDist));
+
+app.use('/api', (req, res) => {
+  res.status(404).json({ message: 'Not Found' });
 });
 
-app.get('/frontend/tasks.html', authenticateToken, (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/tasks.html'));
-});
-
-app.use((req, res, next) => {
-  console.log(`404 Not Found: ${req.method} ${req.originalUrl}`);
-  res.status(404).sendFile(path.join(__dirname, '../frontend/404.html'));
+app.get('*', (req, res) => {
+  if (fs.existsSync(frontendIndex)) {
+    return res.sendFile(frontendIndex);
+  }
+  res.status(404).send('Not Found');
 });
 
 app.listen(PORT, () => {

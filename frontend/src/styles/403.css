@@ -1,4 +1,4 @@
-body {
+.page-403 {
   font-family: "Exo 2", sans-serif;
   background-color: #f4f4f4;
   color: #333;
@@ -16,20 +16,20 @@ body {
   --transition-speed: 0.3s;
 }
 
-.error-code {
+.page-403 .error-code {
   font-size: 6em;
   color: red;
   margin: 0;
 }
 
-.error-message {
+.page-403 .error-message {
   font-size: 1.5em;
   margin-top: 0;
   margin-bottom: 20px;
   font-weight: bold;
 }
 
-a.home-link {
+.page-403 a.home-link {
   display: inline-block;
   padding: 10px 20px;
   background-color: #007bff;
@@ -39,6 +39,6 @@ a.home-link {
   transition: background-color var(--transition-speed);
 }
 
-a.home-link:hover {
+.page-403 a.home-link:hover {
   background-color: #0056b3;
 }
