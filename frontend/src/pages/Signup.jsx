@@ -1,23 +1,15 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import useAuthStatus from '../hooks/useAuthStatus.js';
 import '../styles/signup.css';
 
 export default function Signup() {
   const navigate = useNavigate();
-  const { loading, isAuthenticated } = useAuthStatus();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
-
-  useEffect(() => {
-    if (!loading && isAuthenticated) {
-      navigate('/tasks', { replace: true });
-    }
-  }, [loading, isAuthenticated, navigate]);
 
   const passwordStatus = useMemo(() => {
     return {

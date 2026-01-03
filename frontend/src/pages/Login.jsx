@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import useAuthStatus from '../hooks/useAuthStatus.js';
 import '../styles/login.css';
 
 export default function Login() {
   const navigate = useNavigate();
-  const { loading, isAuthenticated } = useAuthStatus();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-
-  useEffect(() => {
-    if (!loading && isAuthenticated) {
-      navigate('/tasks', { replace: true });
-    }
-  }, [loading, isAuthenticated, navigate]);
 
   const validateEmail = value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 

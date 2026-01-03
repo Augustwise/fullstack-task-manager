@@ -1,18 +1,8 @@
-import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import useAuthStatus from '../hooks/useAuthStatus.js';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/style.css';
 
 export default function Home() {
-  const navigate = useNavigate();
-  const { loading, isAuthenticated } = useAuthStatus();
-
-  useEffect(() => {
-    if (!loading && isAuthenticated) {
-      navigate('/tasks', { replace: true });
-    }
-  }, [loading, isAuthenticated, navigate]);
-
   return (
     <div className="home-page">
       <header className="header">
